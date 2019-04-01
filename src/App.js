@@ -14,7 +14,7 @@ class App extends Component {
             render={() => {
               return [
                 <div class="container">
-                  <h2>T-rex Scans 2.0</h2>
+                  <h2>T-rex Scans</h2>
                   <p>A multilingual scanlation group.</p>
                   <embed src="https://img.shields.io/discord/518583314710528005.svg?style=badge" />
                 </div>
@@ -45,7 +45,7 @@ class App extends Component {
                     out shortly after:
                   </p>
                   <div class="container">
-                    <form name="inquiries" netlify>
+                    <form name="inquiries" method="POST" data-netlify="true">
                       <p>
                         <label>
                           Name <input type="text" name="name" />

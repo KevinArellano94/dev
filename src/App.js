@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import Route from "react-router-dom/Route";
+import NetlifyForm from "react-netlify-form";
 
 class App extends Component {
   render() {
@@ -45,16 +46,27 @@ class App extends Component {
                     out shortly after:
                   </p>
                   <div class="container">
-                    <form
-                      name="contact"
-                      netlify
-                      netlify-honeypot="bot-field"
-                      hidden
-                    >
-                      <input type="text" name="name" />
-                      <input type="email" name="email" />
-                      <textarea name="message" />
-                    </form>
+                    <NetlifyForm name="Contact Form">
+                      {({ loading, error, success }) => (
+                        <div>
+                          {loading && <div>Loading...</div>}
+                          {error && (
+                            <div>
+                              Your information was not sent. Please try again
+                              later.
+                            </div>
+                          )}
+                          {success && <div>Thank you for contacting us!</div>}
+                          {!loading && !success && (
+                            <div>
+                              <input type="text" name="Name" required />
+                              <textarea name="Message" required />
+                              <button>Submit</button>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </NetlifyForm>
                   </div>
                 </div>
               ];

@@ -45,7 +45,14 @@ class App extends Component {
                     out shortly after:
                   </p>
                   <div class="container">
-                    <form name="inquiries" method="POST" data-netlify="true">
+                    <form
+                      name="inquiries"
+                      method="POST"
+                      action="/success"
+                      data-netlify="true"
+                      data-netlify="true"
+                    >
+                      {/* <form name="contact" method="post" action="/success" data-netlify="true"></form> */}
                       <p>
                         <label>
                           Name <input type="text" name="name" />

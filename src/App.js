@@ -46,6 +46,11 @@ class App extends Component {
                   </p>
                   <div class="container" />
                   <form name="contact" method="POST" data-netlify="true">
+                    <input
+                      type="hidden"
+                      name="form-name"
+                      value="contact-form"
+                    />
                     <label>
                       Your Name: <input type="text" name="name" />
                     </label>

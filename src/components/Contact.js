@@ -4,22 +4,24 @@ class Contact extends React.Component {
   render() {
     return [
       <div class="container">
-        <form
-          name="contact"
-          method="POST"
-          action="/thanks.html"
-          netlify-honeypot="bot-field"
-          data-netlify="true"
-          netlify
-        >
-          <p class="hidden">
+        <form name="contact" method="POST" data-netlify="true">
+          <p>
             <label>
-              Don’t fill this out if you're human: <input name="bot-field" />
+              Your Name: <input type="text" name="name" />
             </label>
           </p>
           <p>
             <label>
-              Email: <input type="text" name="email" />
+              Your Email: <input type="email" name="email" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your Role:{" "}
+              <select name="role[]" multiple>
+                <option value="leader">Leader</option>
+                <option value="follower">Follower</option>
+              </select>
             </label>
           </p>
           <p>

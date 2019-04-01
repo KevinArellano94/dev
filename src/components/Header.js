@@ -40,7 +40,6 @@ class Header extends React.Component {
           </ul>
         </nav>
         <div data-netlify-identity-menu />
-        <div data-netlify-identity-button>| Sign up | Log in |</div>
         <center>
           <img src={logo} class="rounded" width="100%" alt="Logo" />
         </center>

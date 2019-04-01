@@ -46,27 +46,14 @@ class App extends Component {
                     out shortly after:
                   </p>
                   <div class="container">
-                    <NetlifyForm name="Contact Form">
-                      {({ loading, error, success }) => (
-                        <div>
-                          {loading && <div>Loading...</div>}
-                          {error && (
-                            <div>
-                              Your information was not sent. Please try again
-                              later.
-                            </div>
-                          )}
-                          {success && <div>Thank you for contacting us!</div>}
-                          {!loading && !success && (
-                            <div>
-                              <input type="text" name="Name" required />
-                              <textarea name="Message" required />
-                              <button>Submit</button>
-                            </div>
-                          )}
-                        </div>
-                      )}
-                    </NetlifyForm>
+                    <form
+                      name="contact"
+                      method="post"
+                      data-netlify="true"
+                      data-netlify-honeypot="bot-field"
+                    >
+                      <input type="hidden" name="bot-field" />
+                    </form>
                   </div>
                 </div>
               ];

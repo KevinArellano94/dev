@@ -34,7 +34,7 @@ class App extends Component {
             }}
           />
           <Route
-            path="/contact"
+            path="/contact.html"
             exact
             render={() => {
               return [

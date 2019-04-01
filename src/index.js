@@ -8,12 +8,14 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
+import Contact from "./components/Contact.js";
 
 ReactDOM.render(
   <ConcurrentMode>
     <StrictMode>
       <Header />
       <App />
+      <Contact />
       <Footer />
     </StrictMode>
   </ConcurrentMode>,

@@ -1,22 +1,37 @@
-<form method="post" action="#">
-  <div className="field half first">
-    <label htmlFor="name">Name</label>
-    <input type="text" name="name" id="name" />
-  </div>
-  <div className="field half">
-    <label htmlFor="email">Email</label>
-    <input type="text" name="email" id="email" />
-  </div>
-  <div className="field">
-    <label htmlFor="message">Message</label>
-    <textarea name="message" id="message" rows="6" />
-  </div>
-  <ul className="actions">
-    <li>
-      <input type="submit" value="Send Message" className="special" />
-    </li>
-    <li>
-      <input type="reset" value="Clear" />
-    </li>
-  </ul>
-</form>;
+import React, { Component } from "react";
+
+class Contact extends React.Component {
+  render() {
+    return [
+      <div class="container">
+        <form
+          name="contact"
+          method="POST"
+          netlify-honeypot="bot-field"
+          data-netlify="true"
+        >
+          <p class="hidden">
+            <label>
+              Don’t fill this out if you're human: <input name="bot-field" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Email: <input type="text" name="email" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Message: <textarea name="message" />
+            </label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
+      </div>
+    ];
+  }
+}
+
+export default Contact;

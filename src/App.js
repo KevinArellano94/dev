@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import Route from "react-router-dom/Route";
-import NetlifyForm from "react-netlify-form";
 
 class App extends Component {
   render() {
@@ -45,16 +44,7 @@ class App extends Component {
                     Please fill out the text boxes below and you will be reached
                     out shortly after:
                   </p>
-                  <div class="container">
-                    <form
-                      name="contact"
-                      method="post"
-                      data-netlify="true"
-                      data-netlify-honeypot="bot-field"
-                    >
-                      <input type="hidden" name="bot-field" />
-                    </form>
-                  </div>
+                  <div class="container" />
                 </div>
               ];
             }}

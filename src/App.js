@@ -46,42 +46,14 @@ class App extends Component {
                   </p>
                   <div class="container">
                     <form
-                      name="inquiries"
-                      method="POST"
-                      action="/success"
-                      data-netlify="true"
-                      data-netlify="true"
+                      name="contact"
+                      netlify
+                      netlify-honeypot="bot-field"
+                      hidden
                     >
-                      {/* <form name="contact" method="post" action="/success" data-netlify="true"></form> */}
-                      <p>
-                        <label>
-                          Name <input type="text" name="name" />
-                        </label>
-                      </p>
-                      <p>
-                        <label>
-                          Email <input type="email" name="email" />
-                        </label>
-                      </p>
-
-                      <p>
-                        <label>
-                          Inquiry Category:{" "}
-                          <select name="category[]" multiple>
-                            <option value="technical">Technical</option>
-                            <option value="job">Job</option>
-                          </select>
-                        </label>
-                      </p>
-                      <p>
-                        <label>
-                          Message: <textarea name="message" />
-                        </label>
-                      </p>
-
-                      <p>
-                        <button type="submit">Send</button>
-                      </p>
+                      <input type="text" name="name" />
+                      <input type="email" name="email" />
+                      <textarea name="message" />
                     </form>
                   </div>
                 </div>

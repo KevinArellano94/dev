@@ -39,7 +39,7 @@ class NetlifyAuth extends React.Component {
     }
     return (
       <a href="#" onClick={this.handleLogOutClick}>
-        Log out of {user.full_name} | {user.email} | {user.roles}}
+        Log out of {user.email}
       </a>
     );
   }

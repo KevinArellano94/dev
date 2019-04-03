@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import "./App.css";
-import { BrowserRouter as Router } from "react-router-dom";
-import Route from "react-router-dom/Route";
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  Redirect,
+  withRouter
+} from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <Router>
+      <BrowserRouter>
         <div>
           <Route
             path="/"
@@ -79,7 +84,7 @@ class App extends Component {
             }}
           />
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }

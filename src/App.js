@@ -19,7 +19,7 @@ class App extends Component {
             render={() => {
               return [
                 <div class="container">
-                  <h2>T-rex Scans</h2>
+                  <h2>T-rex Scans 2.0</h2>
                   <p>A multilingual scanlation group.</p>
                   <embed src="https://img.shields.io/discord/518583314710528005.svg?style=badge" />
                 </div>

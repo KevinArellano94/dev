@@ -4,7 +4,7 @@ class Contact extends React.Component {
   constructor() {
     super();
     this.state = {
-      shown: false
+      shown: true
     };
   }
 
@@ -24,9 +24,9 @@ class Contact extends React.Component {
     };
 
     return (
-      <div class="container">
-        <h2 style={shown}>false</h2>
-        <h2 style={hidden}>true</h2>
+      <div>
+        <h2 style={shown}>this.state.shown = true</h2>
+        <h2 style={hidden}>this.state.shown = false</h2>
         <button onClick={this.toggle.bind(this)}>Toggle</button>
       </div>
     );

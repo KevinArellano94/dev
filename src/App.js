@@ -8,24 +8,6 @@ import {
   withRouter
 } from "react-router-dom";
 
-const ProtectedRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      fakeAuthCentralState.isAuthenticated === true ? (
-        <Component {...props} />
-      ) : (
-        <Redirect
-          to={{
-            pathname: "/login",
-            state: { from: props.location }
-          }}
-        />
-      )
-    }
-  />
-);
-
 class App extends Component {
   render() {
     return (
@@ -40,17 +22,6 @@ class App extends Component {
                   <h2>T-rex Scans</h2>
                   <p>A multilingual scanlation group.</p>
                   <embed src="https://img.shields.io/discord/518583314710528005.svg?style=badge" />
-                  <ul>
-                    <li>
-                      <Link to="/public">Public Content</Link>
-                    </li>
-                    <li>
-                      <Link to="/protected">Protected Content</Link>
-                    </li>
-                  </ul>
-                  <Route path="/public" component={"Public"} />
-                  <Route path="/login" component={withRouter("Login")} />
-                  <ProtectedRoute path="/protected" component={"Protected"} />
                 </div>
               ];
             }}

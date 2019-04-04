@@ -10,6 +10,7 @@ import {
   //withRouter
 } from "react-router-dom";
 import logo_image from "./images/home_World_Map.jpg";
+import NetlifyAuth from "./components/NetlifyAuth.js";
 
 const Header = () => {
   return (
@@ -74,6 +75,20 @@ const Header = () => {
             </li>
           </ul>
         </nav>
+
+        <logo scrolled={"scrolled"} navigationStyle={"navigationStyle"} />
+        <ul className="nav navbar-nav">
+          <li>
+            <NetlifyAuth />
+          </li>
+        </ul>
+        <searchIcon toggleSearch={"toggleSearch"} />
+        <ul className="nav navbar-nav">
+          <li>
+            <div data-netlify-identity-menu />
+          </li>
+        </ul>
+
         <center>
           <img src={logo_image} class="rounded" width="100%" alt="Logo" />
         </center>

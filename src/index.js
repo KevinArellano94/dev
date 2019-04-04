@@ -16,7 +16,7 @@ netlifyIdentity.init();
 ReactDOM.render(
   <ConcurrentMode>
     <StrictMode>
-      <Header />
+      {/* <Header /> */}
       <App />
       {/* <Contact /> */}
       <Footer />

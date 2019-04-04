@@ -9,6 +9,7 @@ import {
   //Redirect,
   //withRouter
 } from "react-router-dom";
+import logo_image from "./images/home_World_Map.jpg";
 
 const Header = () => {
   return (
@@ -73,6 +74,9 @@ const Header = () => {
             </li>
           </ul>
         </nav>
+        <center>
+          <img src={logo_image} class="rounded" width="100%" alt="Logo" />
+        </center>
       </div>
 
       <Switch>
@@ -175,7 +179,7 @@ const NoMatch = () => {
 
 class App extends React.Component {
   render() {
-    return <Header />;
+    return [<Header />];
   }
 }
 

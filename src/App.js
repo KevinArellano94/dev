@@ -5,12 +5,30 @@ import {
   Route,
   //Link,
   NavLink,
-  Switch
-  //Redirect,
-  //withRouter
+  Switch,
+  Redirect,
+  withRouter
 } from "react-router-dom";
 import logo_image from "./images/home_World_Map.jpg";
 import NetlifyAuth from "./components/NetlifyAuth.js";
+
+const ProtectedRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      this.isAuthenticated === true ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: "/faq",
+            state: { from: props.location }
+          }}
+        />
+      )
+    }
+  />
+);
 
 const Header = () => {
   return (
@@ -73,6 +91,16 @@ const Header = () => {
                 E-Reader Mobile
               </NavLink>
             </li>
+            <li class="nav-item active">
+              <NavLink
+                to="/admin"
+                className="normal"
+                activeClassName="active"
+                exact
+              >
+                Administrator
+              </NavLink>
+            </li>
           </ul>
         </nav>
 
@@ -82,12 +110,13 @@ const Header = () => {
             <NetlifyAuth />
           </li>
         </ul>
-        <searchIcon toggleSearch={"toggleSearch"} />
+
+        {/* <searchIcon toggleSearch={"toggleSearch"} />
         <ul className="nav navbar-nav">
           <li>
             <div data-netlify-identity-menu />
           </li>
-        </ul>
+        </ul> */}
 
         <center>
           <img src={logo_image} class="rounded" width="100%" alt="Logo" />
@@ -104,6 +133,7 @@ const Header = () => {
           path="/e-reader-mobile"
           render={props => <EReaderMobile {...props} />}
         />
+        <ProtectedRoute path="/admin" component={Administrator} />
         <Route render={NoMatch} />
       </Switch>
     </BrowserRouter>
@@ -179,6 +209,15 @@ const EReaderMobile = () => {
     <div class="container">
       <h2>E-Reader Mobile || T-rex Scans</h2>
       <p>E-Reader Mobile</p>
+    </div>
+  );
+};
+
+const Administrator = () => {
+  return (
+    <div class="container">
+      <h1>Administrator Page</h1>
+      <h2>If you see this page, you have Administrative roles.</h2>
     </div>
   );
 };

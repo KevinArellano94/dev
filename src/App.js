@@ -98,21 +98,99 @@ class App extends React.Component {
       <BrowserRouter>
         <div class="container">
           <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <NavLink to="/">| Home |</NavLink>
-            <NavLink to="/about" activeClassName="hurray">
-              | About |
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <NavLink
+                  to="/"
+                  style={{
+                    padding: 20,
+                    color: "white"
+                  }}
+                  activeStyle={{
+                    padding: 20,
+                    fontWeight: "bold",
+                    color: "white"
+                  }}
+                  exact
+                >
+                  Home
+                </NavLink>
+              </li>
+            </ul>
+            <NavLink
+              to="/about"
+              style={{
+                padding: 20,
+                color: "white"
+              }}
+              activeStyle={{
+                padding: 20,
+                fontWeight: "bold",
+                color: "white"
+              }}
+              exact
+            >
+              About
             </NavLink>
-            <NavLink to="/contact" activeClassName="hurray">
-              | Contact |
+            <NavLink
+              to="/contact"
+              style={{
+                padding: 20,
+                color: "white"
+              }}
+              activeStyle={{
+                padding: 20,
+                fontWeight: "bold",
+                color: "white"
+              }}
+              exact
+            >
+              Contact
             </NavLink>
-            <NavLink to="/faq" activeClassName="hurray">
-              | FAQ |
+            <NavLink
+              to="/faq"
+              style={{
+                padding: 20,
+                color: "white"
+              }}
+              activeStyle={{
+                padding: 20,
+                fontWeight: "bold",
+                color: "white"
+              }}
+              exact
+            >
+              FAQ
             </NavLink>
-            <NavLink to="/e-reader" activeClassName="hurray">
-              | E-Reader |
+            <NavLink
+              to="/e-reader"
+              style={{
+                padding: 20,
+                color: "white"
+              }}
+              activeStyle={{
+                padding: 20,
+                fontWeight: "bold",
+                color: "white"
+              }}
+              exact
+            >
+              E-Reader
             </NavLink>
-            <NavLink to="/e-reader-mobile" activeClassName="hurray">
-              | E-Reader Mobile |
+            <NavLink
+              to="/e-reader-mobile"
+              style={{
+                padding: 20,
+                color: "white"
+              }}
+              activeStyle={{
+                padding: 20,
+                fontWeight: "bold",
+                color: "white"
+              }}
+              exact
+            >
+              E-Reader Mobile
             </NavLink>
           </nav>
         </div>

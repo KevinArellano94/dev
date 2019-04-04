@@ -1,3 +1,18 @@
+.normal {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  color: white;
+}
+.active {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-weight: bold;
+  color: white;
+}
 .site-footer {
   background-color: #26272b;
   padding: 45px 0 20px;

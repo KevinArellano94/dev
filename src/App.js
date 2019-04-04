@@ -98,96 +98,68 @@ class App extends React.Component {
       <BrowserRouter>
         <div class="container">
           <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <NavLink
-              to="/"
-              style={{
-                padding: 10,
-                color: "white"
-              }}
-              activeStyle={{
-                padding: 10,
-                fontWeight: "bold",
-                color: "white"
-              }}
-              exact
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/about"
-              style={{
-                padding: 10,
-                color: "white"
-              }}
-              activeStyle={{
-                padding: 10,
-                fontWeight: "bold",
-                color: "white"
-              }}
-              exact
-            >
-              About
-            </NavLink>
-            <NavLink
-              to="/contact"
-              style={{
-                padding: 10,
-                color: "white"
-              }}
-              activeStyle={{
-                padding: 10,
-                fontWeight: "bold",
-                color: "white"
-              }}
-              exact
-            >
-              Contact
-            </NavLink>
-            <NavLink
-              to="/faq"
-              style={{
-                padding: 10,
-                color: "white"
-              }}
-              activeStyle={{
-                padding: 10,
-                fontWeight: "bold",
-                color: "white"
-              }}
-              exact
-            >
-              FAQ
-            </NavLink>
-            <NavLink
-              to="/e-reader"
-              style={{
-                padding: 10,
-                color: "white"
-              }}
-              activeStyle={{
-                padding: 10,
-                fontWeight: "bold",
-                color: "white"
-              }}
-              exact
-            >
-              E-Reader
-            </NavLink>
-            <NavLink
-              to="/e-reader-mobile"
-              style={{
-                padding: 10,
-                color: "white"
-              }}
-              activeStyle={{
-                padding: 10,
-                fontWeight: "bold",
-                color: "white"
-              }}
-              exact
-            >
-              E-Reader Mobile
-            </NavLink>
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <NavLink
+                  to="/"
+                  className="normal"
+                  activeClassName="active"
+                  exact
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li class="nav-item active">
+                <NavLink
+                  to="/about"
+                  className="normal"
+                  activeClassName="active"
+                  exact
+                >
+                  About
+                </NavLink>
+              </li>
+              <li class="nav-item active">
+                <NavLink
+                  to="/contact"
+                  className="normal"
+                  activeClassName="active"
+                  exact
+                >
+                  Contact
+                </NavLink>
+              </li>
+              <li class="nav-item active">
+                <NavLink
+                  to="/faq"
+                  className="normal"
+                  activeClassName="active"
+                  exact
+                >
+                  FAQ
+                </NavLink>
+              </li>
+              <li class="nav-item active">
+                <NavLink
+                  to="/e-reader"
+                  className="normal"
+                  activeClassName="active"
+                  exact
+                >
+                  E-Reader
+                </NavLink>
+              </li>
+              <li class="nav-item active">
+                <NavLink
+                  to="/e-reader-mobile"
+                  className="normal"
+                  activeClassName="active"
+                  exact
+                >
+                  E-Reader Mobile
+                </NavLink>
+              </li>
+            </ul>
           </nav>
         </div>
 

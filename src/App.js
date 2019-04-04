@@ -10,6 +10,87 @@ import {
   //withRouter
 } from "react-router-dom";
 
+const Header = () => {
+  return (
+    <BrowserRouter>
+      <div class="container">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <NavLink to="/" className="normal" activeClassName="active" exact>
+                Home
+              </NavLink>
+            </li>
+            <li class="nav-item active">
+              <NavLink
+                to="/about"
+                className="normal"
+                activeClassName="active"
+                exact
+              >
+                About
+              </NavLink>
+            </li>
+            <li class="nav-item active">
+              <NavLink
+                to="/contact"
+                className="normal"
+                activeClassName="active"
+                exact
+              >
+                Contact
+              </NavLink>
+            </li>
+            <li class="nav-item active">
+              <NavLink
+                to="/faq"
+                className="normal"
+                activeClassName="active"
+                exact
+              >
+                FAQ
+              </NavLink>
+            </li>
+            <li class="nav-item active">
+              <NavLink
+                to="/e-reader"
+                className="normal"
+                activeClassName="active"
+                exact
+              >
+                E-Reader
+              </NavLink>
+            </li>
+            <li class="nav-item active">
+              <NavLink
+                to="/e-reader-mobile"
+                className="normal"
+                activeClassName="active"
+                exact
+              >
+                E-Reader Mobile
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <Switch>
+        <Route exact path="/" render={props => <Home {...props} />} />
+        <Route path="/about" render={props => <About {...props} />} />
+        <Route path="/contact" render={props => <Contact {...props} />} />
+        <Route path="/faq" render={props => <FAQ {...props} />} />
+        <Route path="/e-reader" render={props => <EReader {...props} />} />
+        <Route
+          path="/e-reader-mobile"
+          render={props => <EReaderMobile {...props} />}
+        />
+        <Route render={NoMatch} />
+      </Switch>
+    </BrowserRouter>
+  );
+};
+
 const Home = () => {
   return (
     <div class="container">
@@ -94,89 +175,7 @@ const NoMatch = () => {
 
 class App extends React.Component {
   render() {
-    return (
-      <BrowserRouter>
-        <div class="container">
-          <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <NavLink
-                  to="/"
-                  className="normal"
-                  activeClassName="active"
-                  exact
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li class="nav-item active">
-                <NavLink
-                  to="/about"
-                  className="normal"
-                  activeClassName="active"
-                  exact
-                >
-                  About
-                </NavLink>
-              </li>
-              <li class="nav-item active">
-                <NavLink
-                  to="/contact"
-                  className="normal"
-                  activeClassName="active"
-                  exact
-                >
-                  Contact
-                </NavLink>
-              </li>
-              <li class="nav-item active">
-                <NavLink
-                  to="/faq"
-                  className="normal"
-                  activeClassName="active"
-                  exact
-                >
-                  FAQ
-                </NavLink>
-              </li>
-              <li class="nav-item active">
-                <NavLink
-                  to="/e-reader"
-                  className="normal"
-                  activeClassName="active"
-                  exact
-                >
-                  E-Reader
-                </NavLink>
-              </li>
-              <li class="nav-item active">
-                <NavLink
-                  to="/e-reader-mobile"
-                  className="normal"
-                  activeClassName="active"
-                  exact
-                >
-                  E-Reader Mobile
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <Switch>
-          <Route exact path="/" render={props => <Home {...props} />} />
-          <Route path="/about" render={props => <About {...props} />} />
-          <Route path="/contact" render={props => <Contact {...props} />} />
-          <Route path="/faq" render={props => <FAQ {...props} />} />
-          <Route path="/e-reader" render={props => <EReader {...props} />} />
-          <Route
-            path="/e-reader-mobile"
-            render={props => <EReaderMobile {...props} />}
-          />
-          <Route render={NoMatch} />
-        </Switch>
-      </BrowserRouter>
-    );
+    return <Header />;
   }
 }
 

@@ -214,14 +214,6 @@ const NoMatch = () => {
 };
 
 class App extends React.Component {
-  state = {
-    loggedIn: false
-  };
-  loginHandle = () => {
-    this.setState(prevState => ({
-      loggedIn: !prevState.loggedIn
-    }));
-  };
   render() {
     return [<Header />];
   }

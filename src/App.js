@@ -5,8 +5,8 @@ import {
   Route,
   //Link,
   NavLink,
-  Switch
-  //Redirect
+  Switch,
+  Redirect
   //withRouter
 } from "react-router-dom";
 import logo_image from "./images/home_World_Map.jpg";
@@ -116,6 +116,7 @@ const Header = () => {
           render={props => <EReaderMobile {...props} />}
         />
         <Route path="/admin" render={props => <Administrator {...props} />} />
+        <PrivateRoute path="/admin" component={Administrator} />
         <Route render={NoMatch} />
       </Switch>
     </BrowserRouter>
@@ -212,6 +213,19 @@ const NoMatch = () => {
     </div>
   );
 };
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      this.isAuthenticated === true ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to="/login" />
+      )
+    }
+  />
+);
 
 class App extends React.Component {
   render() {

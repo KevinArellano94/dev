@@ -6,8 +6,8 @@ import {
   //Link,
   NavLink,
   Switch,
-  Redirect
-  //withRouter
+  Redirect,
+  withRouter
 } from "react-router-dom";
 import logo_image from "./images/home_World_Map.jpg";
 import NetlifyAuth from "./components/NetlifyAuth.js";
@@ -214,17 +214,64 @@ const NoMatch = () => {
   );
 };
 
+class Login extends React.Component {
+  state = {
+    redirectToReferrer: false
+  };
+  login = () => {
+    NetlifyAuth.authenticate(() => {
+      NetlifyAuth.setState(() => ({
+        redirectToReferrer: true
+      }));
+    });
+  };
+  render() {
+    const { from } = NetlifyAuth.props.location.state || {
+      from: { pathname: "/" }
+    };
+    const { redirectToReferrer } = NetlifyAuth.state;
+
+    if (redirectToReferrer === true) {
+      return <Redirect to={from} />;
+    }
+
+    return (
+      <div>
+        <p>You must log in to view the page</p>
+        <button onClick={NetlifyAuth.login}>Log in</button>
+      </div>
+    );
+  }
+}
+
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      this.isAuthenticated === true ? (
+      NetlifyAuth.isAuthenticated === true ? (
         <Component {...props} />
       ) : (
         <Redirect to="/login" />
       )
     }
   />
+);
+
+const AuthButton = withRouter(({ history }) =>
+  NetlifyAuth.isAuthenticated ? (
+    <p>
+      Welcome!{" "}
+      <button
+        onClick={() => {
+          NetlifyAuth.signout(() => history.push("/"));
+        }}
+      >
+        Sign out
+      </button>
+    </p>
+  ) : (
+    <p>You are not logged in.</p>
+  )
 );
 
 class App extends React.Component {

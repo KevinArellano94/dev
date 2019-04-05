@@ -6,29 +6,11 @@ import {
   //Link,
   NavLink,
   Switch,
-  Redirect,
-  withRouter
+  Redirect
+  //withRouter
 } from "react-router-dom";
 import logo_image from "./images/home_World_Map.jpg";
 import NetlifyAuth from "./components/NetlifyAuth.js";
-
-const ProtectedRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      this.isAuthenticated === true ? (
-        <Component {...props} />
-      ) : (
-        <Redirect
-          to={{
-            pathname: "/faq",
-            state: { from: props.location }
-          }}
-        />
-      )
-    }
-  />
-);
 
 const Header = () => {
   return (
@@ -133,7 +115,7 @@ const Header = () => {
           path="/e-reader-mobile"
           render={props => <EReaderMobile {...props} />}
         />
-        <ProtectedRoute path="/admin" component={Administrator} />
+        <Route path="/admin" render={props => <Administrator {...props} />} />
         <Route render={NoMatch} />
       </Switch>
     </BrowserRouter>
@@ -232,6 +214,14 @@ const NoMatch = () => {
 };
 
 class App extends React.Component {
+  state = {
+    loggedIn: false
+  };
+  loginHandle = () => {
+    this.setState(prevState => ({
+      loggedIn: !prevState.loggedIn
+    }));
+  };
   render() {
     return [<Header />];
   }

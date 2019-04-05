@@ -7,7 +7,7 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import netlifyIdentity from "netlify-identity-widget";
-import Header from "./components/Header.js";
+//import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
 //import Contact from "./components/Contact.js";
 window.netlifyIdentity = netlifyIdentity;

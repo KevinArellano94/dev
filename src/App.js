@@ -5,8 +5,8 @@ import {
   Route,
   //Link,
   NavLink,
-  Switch,
-  Redirect
+  Switch
+  //Redirect
   //withRouter
 } from "react-router-dom";
 import logo_image from "./images/home_World_Map.jpg";

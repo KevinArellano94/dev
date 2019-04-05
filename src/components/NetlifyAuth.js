@@ -32,13 +32,13 @@ class NetlifyAuth extends React.Component {
     const user = netlifyIdentity.currentUser();
     if (!user) {
       return (
-        <a href="/" onClick={this.handleLogInClick}>
+        <a href="#" onClick={this.handleLogInClick}>
           Sign up | Log in
         </a>
       );
     }
     return (
-      <a href="/" onClick={this.handleLogOutClick}>
+      <a href="#" onClick={this.handleLogOutClick}>
         Log out of {user.email}
       </a>
     );

@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import logo_image from "./images/home_World_Map.jpg";
 import NetlifyAuth from "./components/NetlifyAuth.js";
+const netlifyIdentity = require("netlify-identity-widget");
 
 const Header = () => {
   return (
@@ -73,6 +74,7 @@ const Header = () => {
                 E-Reader Mobile
               </NavLink>
             </li>
+            {/* 
             <li class="nav-item active">
               <NavLink
                 to="/admin"
@@ -83,6 +85,7 @@ const Header = () => {
                 Administrator
               </NavLink>
             </li>
+            */}
           </ul>
         </nav>
 
@@ -218,10 +221,8 @@ const NoMatch = () => {
   );
 };
 
-class App extends React.Component {
+export default class App extends Component {
   render() {
     return [<Header />];
   }
 }
-
-export default App;

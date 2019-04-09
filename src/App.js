@@ -5,8 +5,8 @@ import {
   Route,
   //Link,
   NavLink,
-  Switch
-  //Redirect
+  Switch,
+  Redirect
   //withRouter
 } from "react-router-dom";
 import logo_image from "./images/home_World_Map.jpg";
@@ -116,6 +116,11 @@ const Header = () => {
           render={props => <EReaderMobile {...props} />}
         />
         <Route path="/admin" render={props => <Administrator {...props} />} />
+        <Route
+          exact
+          path="/home"
+          render={() => (NetlifyAuth() ? <Redirect to="/admin" /> : <Home />)}
+        />
         <Route render={NoMatch} />
       </Switch>
     </BrowserRouter>
@@ -125,7 +130,7 @@ const Header = () => {
 const Home = () => {
   return (
     <div class="container">
-      <h2>T-rex Scans</h2>
+      <h2>T-rex Scans< 2.0/h2>
       <p>A multilingual scanlation group.</p>
       <embed src="https://img.shields.io/discord/518583314710528005.svg?style=badge" />
     </div>
